@@ -59,16 +59,16 @@ Both cases are intended for desk/table use. No wall mounting case at this time.
 
 ## References
 
-[Pico W Pinout](https://picow.pinout.xyz)
-[Pydexcom project](https://github.com/gagebenne/pydexcom)
-[Micropython docs](https://docs.micropython.org/en/latest/index.html)
-[Micropython "standard" library](https://github.com/micropython/micropython-lib)
-[Micropything programming for screens](https://blog.miguelgrinberg.com/post/micropython-and-the-internet-of-things-part-vi-working-with-a-screen)
-[Display driver SH1106](https://github.com/robert-hh/SH1106)
-[Display driver SSD1306 (might actually be shipped with Micropython)](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
-[Debugging memory usage](https://forum.micropython.org/viewtopic.php?t=3499)
-[Huge library of pixelfonts that are good for use with screens like this](https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_dos_iso8)
-[Options for powering the Pico](https://howchoo.com/pi/how-to-power-the-raspberry-pi-pico)
+- [Pico W Pinout](https://picow.pinout.xyz)
+- [Pydexcom project](https://github.com/gagebenne/pydexcom)
+- [Micropython docs](https://docs.micropython.org/en/latest/index.html)
+- [Micropython "standard" library](https://github.com/micropython/micropython-lib)
+- [Micropything programming for screens](https://blog.miguelgrinberg.com/post/micropython-and-the-internet-of-things-part-vi-working-with-a-screen)
+- [Display driver SH1106](https://github.com/robert-hh/SH1106)
+- [Display driver SSD1306 (might actually be shipped with Micropython)](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
+- [Debugging memory usage](https://forum.micropython.org/viewtopic.php?t=3499)
+- [Huge library of pixelfonts that are good for use with screens like this](https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_dos_iso8)
+- [Options for powering the Pico](https://howchoo.com/pi/how-to-power-the-raspberry-pi-pico)
 
 
 
