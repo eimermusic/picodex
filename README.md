@@ -31,9 +31,25 @@ All development was done on a breadboard, a Pico with headers solder on, and a s
 ## Overview of this Repo
 This repo is organized into a few folders for the hardware and software side of things.
 
-- `hardware` contains the stl files for 2 different versions of the case. The V2 case has the USB power connector at the back and is therefore a bit larger. The V3 case has the USP power connector on the right side. Bothn as intended for desk/table use. Not wall mounting.
-- `micropython` contains the software that runs the device after installing micropython on the Pico.
-- `micropython/upydexcom` is a port of the [Pydexcom project](https://github.com/gagebenne/pydexcom) to run on a Micropython device. This is also available as fork called [UPydexcom project](https://github.com/eimermusic/upydexcom)
+### Hardware
+`hardware` contains the stl files for 2 different versions of the case. Both cases print with n supports just fine on my dirt cheap Ender 3 printer using the cheapest PLA I had. The Pico and screen are both fastened using guide-pegs and hot glue so they don't rattle loose over time. The cases are both assembled just by interference fit. No fastners or adhesives needed. The fit is a bit tight but once snapped into place they are not likely to come loose.
+
+![Version 3 case](https://raw.githubusercontent.com/eimermusic/picodex/main/hardware/Picodex%20v3/picodex3.jpg)
+
+The V3 case has the USB power connector on the right side. This is the smaller, easier to both print, and to assemble.
+
+![Version 2 case](https://raw.githubusercontent.com/eimermusic/picodex/main/hardware/Picodex%20v2/picodex2.jpg)
+
+The V2 case has the USB power connector at the back and is therefore a bit larger.
+
+Both cases are intended for desk/table use. No wall mounting case at this time.
+
+(The version 1 case looked like the v2 but with a fully vertical front)
+
+### Micropython
+`micropython` contains the software that runs the device after installing micropython on the Pico.
+
+`micropython/upydexcom` is a port of the [Pydexcom project](https://github.com/gagebenne/pydexcom) to run on a Micropython device. This is also available as fork called [UPydexcom project](https://github.com/eimermusic/upydexcom)
 
 ## Using this project for your own CGM display
 - `micropython/config.example.py` is intended to be renamed to `config.py` and should contain your wifi and Dexcom login information.
