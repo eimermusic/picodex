@@ -10,7 +10,7 @@
 [Official website](https://www.raspberrypi.com/products/raspberry-pi-pico/).
 
 
-### 2.4" 128x64 OLED display
+### 2.4" 128x64 OLED display with SPI or I2C interface
 These are sold all over the web under many different brand names. JUst make sure it looks like this:
 ![OLED Display](https://raw.githubusercontent.com/eimermusic/picodex/main/img/oled-display.jpg)
 
@@ -32,8 +32,30 @@ All development was done on a breadboard, a Pico with headers solder on, and a s
 This repo is organiced into a few folders for the hardware and software side of things.
 
 - `hardware` contains the stl files for 2 different versions of the case. The V2 case has the USB power connector at the back and is therefore a bit larger. The V3 case has the USP power connector on the right side. Bothn as intended for desk/table use. Not wall mounting.
-- `micropython` contains the software that runs the device after installing micropython on the Pico. `config.example.py` is intended to be renamed to `config.py` and should contain your wifi and Dexcom login information.
+- `micropython` contains the software that runs the device after installing micropython on the Pico.
 - `micropython/upydexcom` is a port of the [Pydexcom project](https://github.com/gagebenne/pydexcom) to run on a Micropython device. This is also available as fork called [UPydexcom project](https://github.com/eimermusic/upydexcom)
+
+## Using this project for your own CGM display
+- `micropython/config.example.py` is intended to be renamed to `config.py` and should contain your wifi and Dexcom login information.
+- `micropython/main.py` supports two kinds of screen drivers. My small dev screen needed a different driver from the bigger screen used in the final device. Depending on the screen you connect, you may need to comment/uncomment the screen setup near the top of the file. I plan to extract this into more clean import files.
+
+
+
+## References
+
+[Pico W Pinout](https://picow.pinout.xyz)
+[Pydexcom project](https://github.com/gagebenne/pydexcom)
+[Micropython docs](https://docs.micropython.org/en/latest/index.html)
+[Micropython "standard" library](https://github.com/micropython/micropython-lib)
+[Micropything programming for screens](https://blog.miguelgrinberg.com/post/micropython-and-the-internet-of-things-part-vi-working-with-a-screen)
+[Display driver SH1106](https://github.com/robert-hh/SH1106)
+[Display driver SSD1306 (might actually be shipped with Micropython)](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
+[Debugging memory usage](https://forum.micropython.org/viewtopic.php?t=3499)
+[Huge library of pixelfonts that are good for use with screens like this](https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_dos_iso8)
+[Options for powering the Pico](https://howchoo.com/pi/how-to-power-the-raspberry-pi-pico)
+
+
+
 
 
 more to come...

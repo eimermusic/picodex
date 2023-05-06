@@ -37,12 +37,8 @@ def connect(oled):
         # raise RuntimeError('network connection failed')
         print('network connection failed. Rebooting...')
         oled.fill(0)
-        oled.text("Connection Failed", 0, 16)
+        oled.text("Connection Error", 0, 16)
         oled.text("Rebooting...", 0, 40)
-        oled.show()
-        time.sleep(1)
-        
-        oled.fill(0)
         oled.show()
         machine.reset()
     else:
