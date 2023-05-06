@@ -29,7 +29,7 @@ You need some wires, soldering equipment, a computer and so on. Notable you don'
 All development was done on a breadboard, a Pico with headers solder on, and a smaller OLED display with the same resolution.
 
 ## Overview of this Repo
-This repo is organiced into a few folders for the hardware and software side of things.
+This repo is organized into a few folders for the hardware and software side of things.
 
 - `hardware` contains the stl files for 2 different versions of the case. The V2 case has the USB power connector at the back and is therefore a bit larger. The V3 case has the USP power connector on the right side. Bothn as intended for desk/table use. Not wall mounting.
 - `micropython` contains the software that runs the device after installing micropython on the Pico.
