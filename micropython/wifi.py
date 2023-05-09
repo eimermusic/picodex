@@ -3,8 +3,10 @@ import time
 import network
 import rp2
 from config import cfg
+from display import oled
 
-def connect(oled):
+
+def connect():
     rp2.country('SE')
     print('connecting to')
     print(cfg['wifi_ssid'])
