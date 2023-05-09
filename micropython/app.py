@@ -7,13 +7,25 @@ from upydexcom import Dexcom
 from config import cfg
 from display import oled
 import wifi
-
+import logging
 
 from const import (
     DEXCOM_TREND_SYMBOLS,
     BIG_NUMBER_SYMBOLS,
 )
 
+def setup_logging():
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    # Create file handler and set level to error
+    file_handler = logging.FileHandler("error.log")
+    file_handler.setLevel(logging.WARNING)
+    # Create a formatter
+    formatter = logging.Formatter("%(asctime)s.%(msecs)03d - %(name)s - %(levelname)s - %(message)s")
+    # Add formatter to the handlers
+    file_handler.setFormatter(formatter)
+    # Add handlers to logger
+    logger.addHandler(file_handler)
 
 def load_image(filename):
     with open(filename, 'rb') as f:
@@ -127,6 +139,8 @@ def runloop():
     return None
 
 
+setup_logging()
+
 # connect to wifi
 wifi.connect()
 
@@ -137,11 +151,13 @@ except TypeError:
     print("Dexcomn API error")
     runloop()
 except:
+    log.exception("Unknown error")
     print("Unknown error, rebooting...")
     oled.fill(0)
     oled.text("UNKNOWN ERROR", 0, 16)
     oled.text("Rebooting...", 0, 40)
     oled.show()
-
-    reset()
-
+finally:
+    logging.shutdown()
+    machine.reset()
+    
