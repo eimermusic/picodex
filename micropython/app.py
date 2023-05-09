@@ -136,12 +136,12 @@ try:
 except TypeError:
     print("Dexcomn API error")
     runloop()
-# except:
-#     print("Unknown error, rebooting...")
-#     oled.fill(0)
-#     oled.text("UNKNOWN ERROR", 0, 16)
-#     oled.text("Rebooting...", 0, 40)
-#     oled.show()
-# 
-#     reset()
+except:
+    print("Unknown error, rebooting...")
+    oled.fill(0)
+    oled.text("UNKNOWN ERROR", 0, 16)
+    oled.text("Rebooting...", 0, 40)
+    oled.show()
+
+    reset()
 
