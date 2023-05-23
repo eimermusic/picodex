@@ -29,7 +29,15 @@ def connect():
         max_wait -= 1
         print('waiting for connection...')
         oled.fill(0)
-        oled.text("Connecting...", 0, 16)
+        status = wlan.status()
+        if status == 0:
+            oled.text("Connecting...", 0, 16)
+        elif status == 1:
+            oled.text("Joining...", 0, 16)
+        elif status == 2:
+            oled.text("Getting IP...", 0, 16)
+        else: 
+            oled.text("W T F", 0, 16)
         oled.text(f"{max_wait}", 0, 40)
         oled.show()
         time.sleep(1)
@@ -38,6 +46,7 @@ def connect():
     if wlan.status() != 3:
         # raise RuntimeError('network connection failed')
         print('network connection failed. Rebooting...')
+        print(f"status: {wlan.status()}")
         oled.fill(0)
         oled.text("Connection Error", 0, 16)
         oled.text("Rebooting...", 0, 40)

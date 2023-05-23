@@ -25,7 +25,7 @@ class Display:
             print('Unknown display requested') 
             sys.exit()
 
-        self.oled.contrast(1)
+        self.oled.contrast(cfg['display_contrast'])
         self.oled.fill(0)
         self.oled.show()
 
