@@ -6,14 +6,9 @@ import framebuf
 import sys
 from config import cfg
 
-from const import (
-    DEXCOM_TREND_SYMBOLS,
-    BIG_NUMBER_SYMBOLS,
-)
-
 class Display:
-    pix_res_x  = 128
-    pix_res_y = 64
+    width  = 128
+    height = 64
 
     oled: framebuf.FrameBuffer
 
@@ -39,12 +34,12 @@ class Display:
         else:
             print("I2C Address      : {}".format(i2c_addr[0])) # I2C device address
             print("I2C Configuration: {}".format(i2c_dev)) # print I2C params
-        return SH1106_I2C(self.pix_res_x, self.pix_res_y, i2c_dev, res=None, addr=0x3c, rotate=180)
+        return SH1106_I2C(self.width, self.height, i2c_dev, res=None, addr=0x3c, rotate=180)
 
 
     def init_SSD1306_SPI(self):
         spi = SPI(0, 100000, mosi=Pin(19), sck=Pin(18))
-        return SSD1306_SPI(self.pix_res_x, self.pix_res_y, spi, Pin(17),Pin(20), Pin(16))
+        return SSD1306_SPI(self.width, self.height, spi, Pin(17),Pin(20), Pin(16))
 
 
 oled = Display(cfg['display_type']).oled
