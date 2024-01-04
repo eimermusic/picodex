@@ -204,6 +204,7 @@ async def rerun_on_exception(coro, *args, **kwargs):
             oled.fill(0)
             oled.text("ERROR ERROR", 0, 32)
             oled.show()
+            raise
 
 
 

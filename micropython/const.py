@@ -1,4 +1,5 @@
 DEXCOM_TREND_SYMBOLS = {
+    0: "pbm/trend_none.pbm",
     1: "pbm/trend_upup.pbm",
     2: "pbm/trend_up.pbm",
     3: "pbm/trend_upside.pbm",
